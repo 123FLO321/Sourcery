@@ -26,8 +26,12 @@ final class StencilTemplate: StencilSwiftKit.StencilSwiftTemplate, SourceryFrame
     }
 
     private static func sourceryEnvironment(templatePath: Path? = nil) -> Stencil.Environment {
-        let ext = Stencil.Extension()
+        
+        
+        //let ext = Configuration.stencilTemplate ?? Stencil.Extension()
 
+        let ext = Stencil.Extension()
+        
         ext.registerStringFilters()
         ext.registerBoolFilter("definedInExtension", filter: { (t: Definition) in t.definedInType?.isExtension ?? false })
 

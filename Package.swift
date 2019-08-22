@@ -4,11 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "Sourcery",
-    platforms: [
-       .macOS(.v10_11),
-    ],
     products: [
-        .executable(name: "sourcery", targets: ["Sourcery"]),
+        .executable(name: "SourceryApp", targets: ["SourceryApp"]),
+        .library(name: "Sourcery", targets: ["Sourcery"]),
         .library(name: "SourceryRuntime", targets: ["SourceryRuntime"]),
         .library(name: "SourceryJS", targets: ["SourceryJS"]),
         .library(name: "SourcerySwift", targets: ["SourcerySwift"]),
@@ -23,6 +21,9 @@ let package = Package(
         .package(url: "https://github.com/tuist/xcodeproj", .exact("4.3.1")),
     ],
     targets: [
+        .target(name: "SourceryApp", dependencies: [
+            "Sourcery"
+        ]),
         .target(name: "Sourcery", dependencies: [
             "SourceryFramework",
             "SourceryRuntime",

@@ -9,6 +9,7 @@
 import Foundation
 import Commander
 import PathKit
+import Sourcery
 import SourceryRuntime
 import SourceryFramework
 import SourceryUtils
